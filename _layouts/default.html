@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>pieopen.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+    <script src="/js/flexible.min.js"></script>
+    {% include css.html %}
+</head>
+
+<body>
+
+    <nav style="display: block">
+        <div class="mobile-nav pc-hidden">
+            <div class="mobile-header-logo">
+                <a href><img class="logo" src="../resource/logo.png"></a>
+            </div>
+            <div class="mobile-header-menu">
+                <img id="menu" src="../resource/menu.png">
+            </div>
+        </div>        <div id="menu-list" class="pc-nav mobile-hidden">
+            <div class="pc-header-logo mobile-hidden">
+                <a href><img class="logo" src="../resource/logo.png"></a>
+            </div>
+            <div class="pc-header-menu">
+                <ul>
+                    <li>
+                        <a href="#overview" class="menu_overview" onclick="menuListOperation()"></a>
+                    </li>
+                    <li>
+                        <a href="#security-bg" class="menu_specifications" onclick="menuListOperation()"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div style="display: block" class="container" onclick="containMenuOperation()">
+        <div id="overview" class="introduction">
+            <img id="introduction-bg" class="bg-image" src="../resource/banner.jpg" alt="introduction" >
+            <div class="text-content">
+                <p class="title introduction-title"></p>
+                <p class="summary introduction-summary"></p>
+                <p class="content introduction-content"></p>
+
+            </div>
+        </div>
+
+
+        <div class="management features-1">
+            <img id="management-bg" class="bg-image" src="../resource/pieopenbitid.jpg" alt="management">
+            <div class="bg-content">
+                <p class="title-features-1"></p>
+                <p class="summary-features-1"></p>
+            </div>
+        </div>
+
+
+
+
+        <div class="features security">
+            <img id="security-bg" class="bg-image" src="../resource/content-bg.jpg" alt="security">
+            <div class="text-content">
+                <p class="title features-title"></p>
+                <p class="summary features-summary"></p>
+
+            </div>
+            <a class="btn btn-position" href="mailto:b@bitpie.com">b@bitpie.com</a>
+        </div>
+
+
+    </div>
+
+
+
+    <footer>
+
+        <p class="thanks"><span id="right"></span><span class="foot-content">PIE 开放平台</span></p>
+    </footer>
+
+    {% include js.html %}
+    <script>
+        $(function() {
+            var date = new Date().getFullYear();
+            $("#right").html("@"+date+" ");
+            $('a[href*=#]:not([href=#])').click(function() {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top - 60
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        $("#menu").click(function() {
+            menuListOperation();
+        });
+
+        $(".menu_report").click(function() {
+            var width = $(window).width();
+            if (width < 768) {
+                var display = $(".mobile-ul").css("display");
+                if (display == "none") {
+                    $(".mobile-ul").css("display", "block");
+                } else {
+                    $(".mobile-ul").css("display", "none");
+                }
+            } else {
+                var display = $(".reports").css("display");
+                if (display == "none") {
+                    $(".reports").css("display", "block");
+                } else {
+                    $(".reports").css("display", "none");
+                }
+            }
+        });
+
+        $(document).ready(function() {
+            adapterSize();
+        })
+
+        $(window).resize(function() {
+            adapterSize();
+        })
+
+        function containMenuOperation() {
+            if ($("#menu-list").hasClass("mobile-hidden") == false) {
+                $("#menu-list").addClass("mobile-hidden");
+            }
+            var display = $(".reports").css("display");
+            if (display == "block") {
+                $(".reports").css("display", "none");
+            }
+        }
+
+
+
+
+
+        function menuListOperation() {
+            if ($("#menu-list").hasClass("mobile-hidden") == true) {
+                $("#menu-list").removeClass("mobile-hidden");
+            } else {
+                $("#menu-list").addClass("mobile-hidden");
+            }
+        }
+
+        function adapterSize() {
+            var width = $(window).width();
+            if (width < 768) {
+
+            }
+        }
+
+        $(function() {
+            var languageCode;
+            if ($.i18n.browserLang() == "zh-CN") {
+                languageCode = "zh";
+            } else if ($.i18n.browserLang() == "zh-TW" || $.i18n.browserLang() == "zh-HK") {
+                languageCode = "en";
+            } else {
+                languageCode = "en";
+            }
+            jQuery.i18n.properties({
+                name: 'strings',
+                path: '/i18n/',
+                mode: 'map',
+                async: true,
+                language: languageCode,
+                callback: function() {
+                    $(".menu_overview").html($.i18n.prop('menu_overview'));
+                    $(".menu_specifications").html($.i18n.prop('menu_specifications'));
+                    $(".introduction-title").html($.i18n.prop('introduction-title'));
+                    $(".introduction-summary").html($.i18n.prop('introduction-summary'));
+                    $(".introduction-content").html($.i18n.prop('introduction-content'));
+                    $(".summary-features-1").html($.i18n.prop('summary-features-1'));
+                    $(".title-features-1").html($.i18n.prop('title-features-1'));
+                    $(".features-title").html($.i18n.prop('features-title'));
+                    $(".features-summary").html($.i18n.prop('features-summary'));
+
+
+
+
+
+
+                }
+         });
+        });
+    </script>
+</body>
+
+</html>
