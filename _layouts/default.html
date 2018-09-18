@@ -27,7 +27,7 @@
             <div class="pc-header-menu">
                 <ul>
                     <li>
-                        <a href="http://docs.pieopen.com" class="menu_docs" onclick="menuListOperation()"></a>
+                        <a href="http://docs.pieopen.com/zh_CN/latest/" class="menu_docs" onclick="menuListOperation()"></a>
                     </li>
                     <li>
                         <a href="#overview" class="menu_overview" onclick="menuListOperation()"></a>
@@ -171,6 +171,7 @@
                 languageCode = "zh";
             } else {
                 languageCode = "en";
+                $(".menu_docs").attr("href","http://docs.pieopen.com/en/latest/")
             }
             //alert($.i18n.browserLang());
             jQuery.i18n.properties({
