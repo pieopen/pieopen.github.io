@@ -1,207 +1,152 @@
 <!doctype html>
-<html lang="en">
+<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
 
 <head>
-    <meta charset="utf-8">
     <title>Pie Open Platform</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <link rel="shortcut icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
-    <script src="/js/flexible.min.js"></script>
-    {% include css.html %}
+    <meta data-n-head="ssr" charset="utf-8">
+    <meta data-n-head="ssr" name="viewport" content="width=375,user-scalable=no">
+    <meta data-n-head="ssr" name="og:type" content="website">
+    <meta data-n-head="ssr" name="og:url" content="https://bitpie.com/">
+    <meta data-n-head="ssr" name="og:locale" content="function() { return 'zh-CN';}">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="比特派是全球领先的多链钱包，支持 BTC/ETH/TRX/USDT 等多种区块链资产。使用比特派，用户可以在方便的使用应用服务的同时确保资产 100% 由自己掌控。">
+    <meta data-n-head="ssr" name="format-detection" content="telephone=no">
+    <meta data-n-head="ssr" data-hid="keywords" name="keywords" content="比特派,比特派官网,比特派下载,比特派钱包,bitpie,ETH钱包,BTC钱包,波场,以太坊,DeFi,火币链,币安智能链,钱包,layer2">
+    <meta data-n-head="ssr" data-hid="og:title" name="og:title" content="比特派,比特派官网,比特派下载,比特派钱包,bitpie,ETH钱包,BTC钱包,波场,以太坊,DeFi,火币链,币安智能链,钱包,layer2">
+    <meta data-n-head="ssr" data-hid="og:site_name" name="og:site_name" content="比特派是全球领先的多链钱包，支持 BTC/ETH/TRX/USDT 等多种区块链资产。使用比特派，用户可以在方便的使用应用服务的同时确保资产 100% 由自己掌控。">
+    <meta data-n-head="ssr" data-hid="og:description" name="og:description" content="比特派,比特派官网,比特派下载,比特派钱包,bitpie,ETH钱包,BTC钱包,波场,以太坊,DeFi,火币链,币安智能链,钱包,layer2">
+    <meta data-n-head="ssr" data-hid="twitter:title" name="twitter:title" content="比特派,比特派官网,比特派下载,比特派钱包,bitpie,ETH钱包,BTC钱包,波场,以太坊,DeFi,火币链,币安智能链,钱包,layer2">
+    <meta data-n-head="ssr" data-hid="twitter:description" name="twitter:description" content="比特派是全球领先的多链钱包，支持 BTC/ETH/TRX/USDT 等多种区块链资产。使用比特派，用户可以在方便的使用应用服务的同时确保资产 100% 由自己掌控。">
+    <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            padding-top: 12px;
+            overflow: hidden;
+            margin: 0 auto;
+            font-family: PingFangSC-Regular, sans-serif;
+        }
+        
+        .warning-div {
+            padding: 1px 20px;
+            overflow: hidden;
+            margin: auto;
+            max-width: 1100px;
+            box-sizing: border-box;
+        }
+        
+        .warning-div p {
+            color: #333;
+            font-size: 16px;
+            font-weight: 400;
+            word-wrap: break-word;
+            line-height: 1.8;
+        }
+        
+        nav {
+            overflow: hidden;
+            height: 64px;
+            margin: 0;
+            padding: 0;
+            margin: auto;
+            width: 100%;
+            max-width: 1100px;
+        }
+        
+        .mobile {
+            text-align: left;
+            display: block;
+        }
+        
+        .mobile-logo {
+            float: left;
+            padding-left: 20px;
+            margin-top: 20px;
+            height: 32px;
+        }
+        
+        .time-div p {
+            font-size: 12px;
+            color: #999;
+        }
+        
+        .time-div {
+            border-bottom: 1px dashed #e4e4e4;
+        }
+        
+        .content {
+            padding-top: 16px;
+        }
+        
+        .link {
+            cursor: pointer;
+            color: #306DE5;
+            text-decoration: none;
+        }
+        
+        .en {
+            display: none;
+        }
+        
+        .cn {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
-
-    <nav style="display: block">
-        <div class="mobile-nav pc-hidden">
-            <div class="mobile-header-logo">
-                <a href><img class="logo" src="../resource/logo.png"></a>
-            </div>
-            <div class="mobile-header-menu">
-                <img id="menu" src="../resource/menu.png">
-            </div>
-        </div>        <div id="menu-list" class="pc-nav mobile-hidden">
-            <div class="pc-header-logo mobile-hidden">
-                <a href><img class="logo" src="../resource/logo.png"></a>
-            </div>
-            <div class="pc-header-menu">
-                <ul>
-                    <li>
-                        <a href="http://docs.pieopen.com/zh_CN/latest/" class="menu_docs" onclick="menuListOperation()"></a>
-                    </li>
-                    <li>
-                        <a href="#overview" class="menu_overview" onclick="menuListOperation()"></a>
-                    </li>
-                    <li>
-                        <a href="#security-bg" class="menu_specifications" onclick="menuListOperation()"></a>
-                    </li>
-                </ul>
-            </div>
+    <nav data-v-69d35191="">
+        <div class="mobile" data-v-69d35191="">
+            <img src="../resource/icon_logo.png" class="mobile-logo" data-v-69d35191="">
         </div>
     </nav>
 
-
-
-    <div style="display: block" class="container" onclick="containMenuOperation()">
-        <div id="overview" class="introduction">
-            <img id="introduction-bg" class="bg-image" src="../resource/banner.jpg" alt="introduction" >
-            <div class="text-content">
-                <p class="title introduction-title"></p>
-                <p class="summary introduction-summary"></p>
-                <p class="content introduction-content"></p>
-
+    <div class="warning-div">
+        <div class="time-div">
+            <p>2019-01-01</p>
+        </div>
+        <div class="content">
+            <div class="cn">
+                <p>pieopen已于2019年1月1日停止服务。</p>
+            </div>
+            <div class="en">
+                <p>pieopen has ceased service on January 1, 2019.</p>
             </div>
         </div>
-
-
-        <div class="management features-1">
-            <img id="management-bg" class="bg-image" src="../resource/pieopenbitid.jpg" alt="management">
-            <div class="bg-content">
-                <p class="title-features-1"></p>
-                <p class="summary-features-1"></p>
+        <div class="team-div">
+            <div class="cn">
+                <p>比特派团队</p>
+            </div>
+            <div class="en">
+                <p>Bitpie Team</p>
             </div>
         </div>
-
-
-
-
-        <div class="features security">
-            <img id="security-bg" class="bg-image" src="../resource/content-bg.jpg" alt="security">
-            <div class="text-content">
-                <p class="title features-title"></p>
-                <p class="summary features-summary"></p>
-
-            </div>
-            <a class="btn btn-position" href="mailto:b@bitpie.com">b@bitpie.com</a>
-        </div>
-
-
     </div>
 
-
-
-    <footer>
-
-        <p class="thanks"><span id="right"></span><span class="foot-content"></span></p>
-    </footer>
-
-    {% include js.html %}
     <script>
-        $(function() {
-            var date = new Date().getFullYear();
-            $("#right").html("@"+date+" ");
-            $('a[href*=#]:not([href=#])').click(function() {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                    if (target.length) {
-                        $('html,body').animate({
-                            scrollTop: target.offset().top - 60
-                        }, 1000);
-                        return false;
-                    }
-                }
-            });
-        });
-    </script>
-    <script>
-        $("#menu").click(function() {
-            menuListOperation();
-        });
-
-        $(".menu_report").click(function() {
-            var width = $(window).width();
-            if (width < 768) {
-                var display = $(".mobile-ul").css("display");
-                if (display == "none") {
-                    $(".mobile-ul").css("display", "block");
-                } else {
-                    $(".mobile-ul").css("display", "none");
-                }
-            } else {
-                var display = $(".reports").css("display");
-                if (display == "none") {
-                    $(".reports").css("display", "block");
-                } else {
-                    $(".reports").css("display", "none");
-                }
-            }
-        });
-
-        $(document).ready(function() {
-            adapterSize();
-        })
-
-        $(window).resize(function() {
-            adapterSize();
-        })
-
-        function containMenuOperation() {
-            if ($("#menu-list").hasClass("mobile-hidden") == false) {
-                $("#menu-list").addClass("mobile-hidden");
-            }
-            var display = $(".reports").css("display");
-            if (display == "block") {
-                $(".reports").css("display", "none");
+        function displayHandle(lang, isDisplay) {
+            let elements = document.getElementsByClassName(lang)
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].style.display = isDisplay ? 'block' : 'none'
             }
         }
 
-
-
-
-
-        function menuListOperation() {
-            if ($("#menu-list").hasClass("mobile-hidden") == true) {
-                $("#menu-list").removeClass("mobile-hidden");
-            } else {
-                $("#menu-list").addClass("mobile-hidden");
-            }
+        let browserLang = navigator.language ?
+            navigator.language :
+            navigator.browserLanguage;
+        let defaultBrowserLang = "";
+        if (!(browserLang.toLowerCase() === "zh-hk" ||
+                browserLang.toLowerCase() === "zh-tw" ||
+                browserLang.toLowerCase() === "zh-mo" ||
+                browserLang.toLowerCase() === "zh-sg" ||
+                browserLang.toLowerCase() === "zh-cn")) {
+            displayHandle('cn', true)
+            displayHandle('en', false)
+        } else {
+            displayHandle('cn', false)
+            displayHandle('en', true)
         }
-
-        function adapterSize() {
-            var width = $(window).width();
-            if (width < 768) {
-
-            }
-        }
-
-        $(function() {
-            var languageCode;
-            if ($.i18n.browserLang() == "zh-CN" || new String($.i18n.browserLang()).indexOf("zh") > -1) {
-                languageCode = "zh";
-            } else {
-                languageCode = "en";
-                $(".menu_docs").attr("href","http://docs.pieopen.com/en/latest/")
-            }
-            //alert($.i18n.browserLang());
-            jQuery.i18n.properties({
-                name: 'strings',
-                path: '/i18n/',
-                mode: 'map',
-                async: true,
-                language: languageCode,
-                callback: function() {
-                    $(".menu_overview").html($.i18n.prop('menu_overview'));
-                    $(".menu_docs").html($.i18n.prop('menu_docs'));
-                    $(".menu_specifications").html($.i18n.prop('menu_specifications'));
-                    $(".introduction-title").html($.i18n.prop('introduction-title'));
-                    $(".introduction-summary").html($.i18n.prop('introduction-summary'));
-                    $(".introduction-content").html($.i18n.prop('introduction-content'));
-                    $(".summary-features-1").html($.i18n.prop('summary-features-1'));
-                    $(".title-features-1").html($.i18n.prop('title-features-1'));
-                    $(".features-title").html($.i18n.prop('features-title'));
-                    $(".features-summary").html($.i18n.prop('features-summary'));
-                    $(".foot-content").html($.i18n.prop('foot-content'));
-
-
-
-
-
-
-
-                }
-         });
-        });
     </script>
 </body>
 
